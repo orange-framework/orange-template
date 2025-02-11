@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useRouteError,
 } from "@orange-js/orange";
 
 import rootStyles from "./root.css?inline";
@@ -45,31 +46,26 @@ export default function App() {
   return <Outlet />;
 }
 
-export function ErrorBoundary({ error }: { error: unknown }) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
+export function ErrorBoundary() {
+  const error = useRouteError();
+
+  let status = 500;
+  let details = "Internal Server Error";
   let stack: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
+    status = error.status;
+    details = error.statusText;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
     stack = error.stack;
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
+    <main className="w-screen h-screen flex flex-col gap-2 items-center justify-center mx-auto">
+      <h1 className="text-xl font-mono">HTTP {status}</h1>
+      <h2 className="text-5xl font-mono border-orange-500 border-b-2 pb-3 border-dotted">{details}</h2>
+      {stack && <pre className="text-xs text-left">{stack}</pre>}
     </main>
   );
 }
