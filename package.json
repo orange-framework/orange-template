@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite build && wrangler dev",
-    "deploy": "vite build && wrangler deploy"
+    "deploy": "vite build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "keywords": [],
   "author": "",
@@ -15,19 +16,19 @@
   "description": "",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250224.0",
-    "@orange-js/vite": "0.0.15",
+    "@orange-js/vite": "0.1.0",
     "@types/react": "^19.0.2",
-    "autoprefixer": "^10.4.20",
     "esbuild": "^0.24.2",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17",
-    "vite": "^6.1.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
     "vite-tsconfig-paths": "^5.1.4",
-    "wrangler": "^3.109.3"
+    "wrangler": "^4.0.0"
   },
   "dependencies": {
-    "@orange-js/orange": "0.0.11",
+    "@orange-js/orange": "0.1.0",
+    "@tailwindcss/vite": "^4.0.14",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.14"
   }
 }
