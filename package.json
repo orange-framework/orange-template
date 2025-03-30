@@ -22,7 +22,7 @@
     "typescript": "^5.8.2",
     "vite": "^6.2.2",
     "vite-tsconfig-paths": "^5.1.4",
-    "wrangler": "^4.0.0"
+    "wrangler": "^4.6.0"
   },
   "dependencies": {
     "@orange-js/orange": "0.1.0",
