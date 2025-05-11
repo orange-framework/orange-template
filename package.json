@@ -16,16 +16,17 @@
   "description": "",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250224.0",
-    "@orange-js/vite": "0.1.0",
+    "@orange-js/cli": "0.2.0",
+    "@orange-js/vite": "0.2.0",
     "@types/react": "^19.0.2",
     "esbuild": "^0.24.2",
     "typescript": "^5.8.2",
     "vite": "^6.2.2",
     "vite-tsconfig-paths": "^5.1.4",
-    "wrangler": "^4.6.0"
+    "wrangler": "^4.14.4"
   },
   "dependencies": {
-    "@orange-js/orange": "0.1.0",
+    "@orange-js/orange": "0.2.0",
     "@tailwindcss/vite": "^4.0.14",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

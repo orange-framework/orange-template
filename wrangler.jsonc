@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "orange-template",
   "main": "./app/entry.server.ts",
-  "compatibility_date": "2024-12-05",
+  "compatibility_date": "2025-05-11",
   "compatibility_flags": ["nodejs_compat"],
   // Where the static asses built by Vite will be served out of.
   "assets": {
